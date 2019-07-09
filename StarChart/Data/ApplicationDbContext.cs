@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
+using Microsoft.EntityFrameworkCore;
 using StarChart.Models;
 
 namespace StarChart.Data
@@ -9,6 +10,11 @@ namespace StarChart.Data
 
         public ApplicationDbContext(DbContextOptions options) : base(options)
         {
+        }
+
+        internal bool FirstOrDefault(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }
