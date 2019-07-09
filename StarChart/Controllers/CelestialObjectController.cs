@@ -25,7 +25,7 @@ namespace StarChart.Controllers
 
             if (celestialObjects == null)
             {
-                NotFound();
+                return NotFound();
             }
 
             celestialObjects.Satellites = _context.CelestialObjects.Where(c => c.OrbitedObjectId == id).ToList();
