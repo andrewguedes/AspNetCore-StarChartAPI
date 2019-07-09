@@ -38,9 +38,9 @@ namespace StarChart.Controllers
         {
             var celestialObjects = _context.CelestialObjects.Where(c => c.Name == name).ToList();
 
-            if (celestialObjects == null)
+            if (!celestialObjects.Any())
             {
-                NotFound();
+                return NotFound();
             }
 
             foreach (var item in celestialObjects)
